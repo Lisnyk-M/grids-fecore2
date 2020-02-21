@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+}
+
+.wrap > * {
+  border: 1px solid black;
+  font-size: 30px;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 5px;
+  grid-auto-rows: minmax(80px, auto);
+}
+
+.wrap header, .wrap footer {
+  grid-column: 1/3;
+}
+
+.wrap aside {
+  grid-row: 2/4;
+  grid-column: 2/3;
+}
+
+.area-wrap header {
+  grid-area: myheader;
+}
+.area-wrap section {
+  grid-area: mysection;
+}
+.area-wrap aside {
+  grid-area: myaside;
+}
+.area-wrap footer {
+  grid-area: myfooter;
+}
+.area-wrap main {
+  grid-area: mymain;
+}
+
+.area-wrap {
+  margin-top: 100px;
+  grid-auto-rows: minmax(80px, auto);
+  display: grid;
+  grid-gap: 5px;
+  grid-template-areas:
+  "myheader myheader ."
+  "myaside mysection ."
+  "myaside mymain ."
+  "myfooter myfooter .";
+}
+
+@media screen and (max-width: 768px) {
+  .area-wrap {
+    grid-template-areas:
+      "myfooter myfooter myaside"
+      "mysection mysection myaside"
+      "mymain mymain myaside"
+      "myheader myheader myaside";
+  }
+}
+
+.area-wrap * {
+  border: orangered solid 1px;
+}

@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+}
+.wrapper > div {
+  background: rgb(165, 164, 164);
+  font-size: 30px;
+}
+.wrapper > div:nth-child(odd) {
+  background: rgb(244, 200, 200);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+  /* justify-items: end;
+  align-items: center; */
+}
+
+.tri {
+  align-self: center;
+  justify-self: center;
+}
+
+.perviy {
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
+
+  grid-column: 1/3;
+  grid-row: 2/4;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 2fr;
+  }
+}
